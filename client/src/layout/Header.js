@@ -101,6 +101,15 @@ const Button = styled.button`
   margin: 0 26px;
   font-weight: 500;
   font-size: 10px;
+  white-space: nowrap;
+  box-shadow: 0 5px 14px
+    ${props =>
+      props.theme.colors.boxShadow.color
+        .alpha(0.63)
+        .rgb()
+        .string()};
+  background-color: ${props => props.theme.colors.primary.value};
+  color: ${props => props.theme.colors.white.value};
 `;
 
 const Avatar = styled.div`

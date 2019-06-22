@@ -3,6 +3,7 @@ import Color from 'color';
 
 export const colors = {
   primary: '#4E47EE',
+  secondary: '#D8D6FF',
   inactive: '#9F9FAB',
   black: '#3B3A3A',
   white: '#FFFFFF',
@@ -129,14 +130,8 @@ export const button = css`
   outline: none;
   border: 0;
   cursor: pointer;
-  box-shadow: 0 5px 14px
-    ${props =>
-      props.theme.colors.boxShadow.color
-        .alpha(0.63)
-        .rgb()
-        .string()};
-  background-color: ${props => props.theme.colors.primary.value};
-  color: ${props => props.theme.colors.white.value};
+  background-color: ${props => props.theme.colors.white.value};
+  color: ${props => props.theme.colors.black.value};
   &:disabled {
     ${disabledButton}
   }

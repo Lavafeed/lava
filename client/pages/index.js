@@ -1,6 +1,9 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import { mediaMax } from '../shared/styles';
+import { mediaMax, container } from '../shared/styles';
+
+/* remove category and add FEED component */
+import Category from '../src/home/Category';
 
 export default class Home extends React.Component {
   render() {
@@ -11,7 +14,9 @@ export default class Home extends React.Component {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <Wrapper>
-          <div>Lava</div>
+          <Container>
+            <Category />
+          </Container>
         </Wrapper>
       </React.Fragment>
     );
@@ -19,15 +24,17 @@ export default class Home extends React.Component {
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: 224px;
-  margin-right: 285px;
-  padding: 105px 40px 40px 40px;
+  // margin-left: 224px;
+  // margin-right: 285px;
+  padding: 24px 0;
   ${mediaMax.tablet`
     margin: 0;
     padding-right: 16px;
     padding-left: 16px;
     padding-top: 81px;
   `}
+`;
+
+const Container = styled.div`
+  ${container};
 `;
