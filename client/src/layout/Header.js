@@ -97,7 +97,6 @@ const NavLink = styled(Link)`
 const Button = styled.button`
   ${button};
   max-height: 28px;
-  max-width: 112px;
   padding: 8px 24px;
   margin: 0 26px;
   font-weight: 500;
