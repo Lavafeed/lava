@@ -1,5 +1,7 @@
 import styled from 'styled-components';
+import Heading from '../../src/common/Heading';
 import Card from './Card';
+
 export default () => {
   const params = {
     slug: '1',
@@ -13,12 +15,20 @@ export default () => {
   };
   return (
     <Wrapper>
-      <Card {...params} />
+      <Heading>Trending</Heading>
+      <Cards>
+        <Card {...params} />
+      </Cards>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
