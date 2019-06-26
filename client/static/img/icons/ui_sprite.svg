@@ -79,4 +79,10 @@
       </g>
     </g>
   </symbol>
+  <symbol id="plus" viewBox="0 0 8 8">
+    <g transform="translate(-1052.5 -539)">
+      <rect width="1.455" height="8" rx="0.727" transform="translate(1055.773 539)"/>
+      <rect width="1.455" height="8" rx="0.727" transform="translate(1052.5 543.727) rotate(-90)"/>
+    </g>
+  </symbol>
 </svg>
