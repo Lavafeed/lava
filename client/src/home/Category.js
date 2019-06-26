@@ -47,12 +47,17 @@ export default () => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid ${props => props.theme.colors.greyBorders.value};
+
+  &:last-of-type {
+    border-bottom: none;
+  }
 `;
 
 const Container = styled.div`
   ${container};
   padding-top: 24px;
-  padding-bottom: 24px;
+  padding-bottom: 38px;
 `;
 
 const CategoryHead = styled.div`
