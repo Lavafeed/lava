@@ -7,6 +7,7 @@ export const colors = {
   inactive: '#9F9FAB',
   black: '#3B3A3A',
   white: '#FFFFFF',
+  lightGrey: '#f6f7fb',
   greyBorders: '#E0E0E8',
   bg: '#FDFDFE',
   boxShadow: '#7F88E7'

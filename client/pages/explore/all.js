@@ -1,20 +1,22 @@
 import Head from 'next/head';
 import styled from 'styled-components';
-import { mediaMax } from '../shared/styles';
+import { mediaMax } from '../../shared/styles';
 
 /* remove category and add FEED component */
-import Feed from '../src/home/Feed';
+import Categories from '../../src/explore/Categories';
+import Category from '../../src/home/Category';
 
 export default class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
         <Head>
-          <title>Lava — Home</title>
+          <title>Lava — Explore</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
         <Wrapper>
-          <Feed />
+          <Categories />
+          <Category />
         </Wrapper>
       </React.Fragment>
     );

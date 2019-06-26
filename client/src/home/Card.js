@@ -52,7 +52,7 @@ const ProjectLink = styled(Link)`
   width: 100%;
 
   &:hover {
-    background-color: #f6f7fb;
+    background-color: ${props => props.theme.colors.lightGrey.value};
   }
 `;
 

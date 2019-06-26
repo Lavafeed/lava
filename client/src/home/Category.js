@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { button } from '../../shared/styles';
+import { button, container } from '../../shared/styles';
 
 import Icon from '../common/Icon';
 import Heading from '../../src/common/Heading';
@@ -19,15 +19,27 @@ export default () => {
   };
   return (
     <Wrapper>
-      <CategoryHead>
-        <Heading>Trending</Heading>
-        {/* {projects.length > 0 && <ViewMore to={this.props.to}>View More</ViewMore>} */}
-        <Follow>Follow</Follow>
-        <ViewMore>View More</ViewMore>
-      </CategoryHead>
-      <Cards>
-        <Card {...params} />
-      </Cards>
+      <Container>
+        <CategoryHead>
+          <Heading>Trending</Heading>
+          {/* {projects.length > 0 && <ViewMore to={this.props.to}>View More</ViewMore>} */}
+          <Follow>Follow</Follow>
+          <ViewMore>View More</ViewMore>
+        </CategoryHead>
+        <Cards>
+          <Card {...params} />
+          <Card {...params} />
+          <Card {...params} />
+          <Card {...params} />
+          <Card {...params} />
+          <Card {...params} />
+          <Card {...params} />
+          <Card {...params} />
+          <Card {...params} />
+          <Card {...params} />
+          <Card {...params} />
+        </Cards>
+      </Container>
     </Wrapper>
   );
 };
@@ -35,6 +47,12 @@ export default () => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+`;
+
+const Container = styled.div`
+  ${container};
+  padding-top: 24px;
+  padding-bottom: 24px;
 `;
 
 const CategoryHead = styled.div`
@@ -78,4 +96,5 @@ const CustomIcon = styled(Icon)`
 const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 `;

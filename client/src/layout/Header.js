@@ -15,7 +15,7 @@ export default ({ pathname, ...props }) => {
             <NavLink to="/" active={pathname === '/'}>
               Feed
             </NavLink>
-            <NavLink to="/explore" active={pathname === '/explore'}>
+            <NavLink to="/explore/all" active={pathname === '/explore/all'}>
               Explore
             </NavLink>
             <NavLink to="/artbit" active={pathname === '/artbit'}>
