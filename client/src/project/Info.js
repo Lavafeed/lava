@@ -57,7 +57,7 @@ export default ({ ...props }) => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 28px;
+  padding: 0 28px 27px;
   border-bottom: 1px solid ${props => props.theme.colors.greyBorders.value};
 `;
 
@@ -92,12 +92,11 @@ const IconBtn = styled.button`
 `;
 
 const Info = styled.div`
-  padding: 22px 0 27px;
+  margin-top: 22px;
 `;
 
 const Title = styled.h3`
   font-size: 26px;
-  font-weight: normal;
   line-height: 1.23;
   text-align: left;
   color: ${props => props.theme.colors.black.value};
@@ -115,7 +114,7 @@ const Tag = styled.span`
   font-size: 12px;
   line-height: 1.5;
   color: ${props => props.theme.colors.inactive.value};
-  margin-right: 4px;
+  margin-right: 5px;
 
   &:after {
     content: ',';

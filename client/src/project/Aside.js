@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import ProjectInfo from './ProjectInfo';
+import Info from './Info';
+import Votes from './Votes';
 
 class Aside extends React.Component {
   render() {
     return (
       <Wrapper>
-        <ProjectInfo />
+        <Info />
+        <Votes />
       </Wrapper>
     );
   }

@@ -4,10 +4,11 @@ import Color from 'color';
 export const colors = {
   primary: '#4E47EE',
   secondary: '#D8D6FF',
+  pink: '#FF84C2',
   inactive: '#9F9FAB',
   black: '#3B3A3A',
   white: '#FFFFFF',
-  lightGrey: '#f6f7fb',
+  lightGrey: '#F6F7Fb',
   greyBorders: '#E0E0E8',
   bg: '#FDFDFE',
   boxShadow: '#7F88E7'
@@ -125,16 +126,40 @@ export const disabledButton = css`
 
 export const button = css`
   ${roundedButton};
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   font-size: 16px;
   outline: none;
   border: 0;
   cursor: pointer;
   background-color: ${props => props.theme.colors.white.value};
   color: ${props => props.theme.colors.black.value};
+
   &:disabled {
     ${disabledButton}
+  }
+`;
+
+export const buttonPrimary = css`
+  ${button};
+  background-color: ${props => props.theme.colors.primary.value};
+  color: ${props => props.theme.colors.white.value};
+  box-shadow: 0 5px 14px
+    ${props =>
+      props.theme.colors.boxShadow.color
+        .alpha(0.63)
+        .rgb()
+        .string()};
+  transition: 150ms ease-in-out;
+
+  &:hover {
+    background-color: ${props => props.theme.colors.pink.value};
+    box-shadow: 0 5px 14px
+      ${props =>
+        props.theme.colors.pink.color
+          .alpha(0.63)
+          .rgb()
+          .string()};
   }
 `;
 

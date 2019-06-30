@@ -29,7 +29,6 @@ class ShowProject extends React.Component {
   }
 
   render() {
-    console.log('---', this.props.router);
     return (
       <React.Fragment>
         <Head>

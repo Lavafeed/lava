@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export default ({ height, name, active, handleClick, ...props }) => {
   return (
-    <Icon onClick={handleClick} height={height}>
+    <Icon onClick={handleClick} height={height} {...props}>
       <use
         xlinkHref={`../../static/img/icons/ui_sprite.svg#${name}${
           active ? '-active' : ''
@@ -19,6 +19,7 @@ const Icon = styled.svg.attrs(() => ({
   object-fit: contain;
   max-width: 16px;
   height: ${props => (props.height ? props.height : '12px')};
+  width: ${props => (props.height ? props.height : '12px')};
   margin-right: 16px;
   cursor: pointer;
 
