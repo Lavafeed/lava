@@ -21,5 +21,4 @@ const Button = styled.button`
   text-align: center;
   padding: 7px 20px 8px;
   max-width: 68px;
-  margin-left: 24px;
 `;

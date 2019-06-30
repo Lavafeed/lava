@@ -8,6 +8,7 @@ export default ({ children, ...props }) => (
 
 const Wrapper = styled.div`
   display: flex;
+  margin-right: 24px;
 `;
 
 const Title = styled.h2`

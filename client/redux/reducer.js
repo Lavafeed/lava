@@ -1,3 +1,8 @@
-export default function reducer(state, action) {
-  return state;
-}
+import { combineReducers } from 'redux';
+import { project } from './ducks';
+
+const rootReducer = combineReducers({
+  project
+});
+
+export default rootReducer;

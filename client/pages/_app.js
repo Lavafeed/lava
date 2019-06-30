@@ -8,6 +8,7 @@ import { theme } from '../shared/styles';
 import withReduxStore from '../hocs/with-redux';
 import Wrapper from '../src/layout/Wrapper';
 import Header from '../src/layout/Header';
+import Overlay from '../src/layout/Overlay.js';
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx, ...props }) {
@@ -27,6 +28,7 @@ class MyApp extends App {
         <ThemeProvider theme={theme}>
           <Provider store={reduxStore}>
             <Wrapper>
+              <Overlay />
               <Head>
                 <title>Lava</title>
                 <meta

@@ -48,7 +48,7 @@ const Header = styled.header`
   background-color: #fff;
   border-bottom: 1px solid ${props => props.theme.colors.greyBorders.value};
   width: 100%;
-  z-index: 2020;
+  z-index: 2;
   transform: translateY(0);
   transition: transform 0.3s ease;
 `;

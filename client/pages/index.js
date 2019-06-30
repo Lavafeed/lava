@@ -2,7 +2,6 @@ import Head from 'next/head';
 import styled from 'styled-components';
 import { mediaMax } from '../shared/styles';
 
-/* remove category and add FEED component */
 import Feed from '../src/home/Feed';
 
 export default class Home extends React.Component {

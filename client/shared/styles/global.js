@@ -12,6 +12,8 @@ export default createGlobalStyle`
     font-weight: 400;
     font-size: 14px;
     background-color: #F7F7F7;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased;
   }
   * {
     -webkit-box-sizing: inherit;
@@ -40,6 +42,7 @@ export default createGlobalStyle`
     border: 0;
     cursor: pointer;
     background-color: #fff;
+    white-space: nowrap;
   }
   .scroll,
   .scroll * {
