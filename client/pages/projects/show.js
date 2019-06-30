@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import Head from 'next/head';
+import { connect } from 'react-redux';
 import { withRouter } from 'next/router';
+import { selectOverlay, toggleOverlay } from '../../redux/ducks/layout';
 import { container } from '../../shared/styles';
 import Project from '../../src/project/Project';
 
@@ -28,13 +30,19 @@ class ShowProject extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.toggleOverlay();
+  }
+
   render() {
+    const { hasOverlay } = this.props;
+
     return (
       <React.Fragment>
         <Head>
-          <title>random</title>
+          <title>Project info</title>
         </Head>
-        <Container>
+        <Container hasOverlay={hasOverlay}>
           <Project />
         </Container>
       </React.Fragment>
@@ -42,14 +50,25 @@ class ShowProject extends React.Component {
   }
 }
 
-export default withRouter(ShowProject);
+export default connect(
+  state => ({
+    hasOverlay: selectOverlay(state)
+  }),
+  dispatch => ({
+    toggleOverlay: () => dispatch(toggleOverlay())
+  })
+)(withRouter(ShowProject));
 
 const Container = styled.div`
-  position: absolute;
-  top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 1021;
-  width: 100%;
-  max-width: 1206px;
+  ${props =>
+    props.hasOverlay &&
+    `
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1021;
+    width: 100%;
+    max-width: 1206px;
+  `}
 `;

@@ -1,10 +1,18 @@
 import styled from 'styled-components';
+import { connect } from 'react-redux';
+import Router from 'next/router';
+import { toggleOverlay } from '../../redux/ducks/layout';
 import Icon from '../common/Icon';
 import { avatar, button } from '../../shared/styles';
 import Follow from '../home/Follow';
 
-export default ({ ...props }) => {
+const Info = ({ ...props }) => {
   const tags = ['User Experience', 'Interaction Design', 'Animation Design'];
+
+  const handleClose = () => {
+    props.toggleOverlay();
+    Router.back();
+  };
 
   return (
     <Wrapper>
@@ -14,12 +22,12 @@ export default ({ ...props }) => {
         <IconBtn>
           <Icon name="more" />
         </IconBtn>
-        <IconBtn>
+        <IconBtn onClick={handleClose}>
           <Icon name="cross" />
         </IconBtn>
       </Header>
       <Follow>Follow</Follow>
-      <Info>
+      <Details>
         <Title>IKEA Digital concept redesign</Title>
         <Tags>
           {tags.map(tag => (
@@ -49,10 +57,17 @@ export default ({ ...props }) => {
             <Icon name="more" />
           </RewardBtn>
         </Buttons>
-      </Info>
+      </Details>
     </Wrapper>
   );
 };
+
+export default connect(
+  state => ({}),
+  dispatch => ({
+    toggleOverlay: () => dispatch(toggleOverlay())
+  })
+)(Info);
 
 const Wrapper = styled.div`
   display: flex;
@@ -91,7 +106,7 @@ const IconBtn = styled.button`
   width: 28px;
 `;
 
-const Info = styled.div`
+const Details = styled.div`
   margin-top: 22px;
 `;
 

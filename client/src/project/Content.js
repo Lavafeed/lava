@@ -1,25 +1,29 @@
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { selectOverlay } from '../../redux/ducks/layout';
 
-class Content extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <ProjectImage src="/static/img/project.jpg" />
-      </Wrapper>
-    );
-  }
-}
+const Content = ({ hasOverlay, ...props }) => (
+  <Wrapper>
+    <ProjectImage src="/static/img/project.jpg" hasOverlay={hasOverlay} />
+  </Wrapper>
+);
 
-export default connect(null)(Content);
+export default connect(state => ({
+  hasOverlay: selectOverlay(state)
+}))(Content);
 
 const Wrapper = styled.div`
   overflow-y: scroll;
   min-width: 70%;
   max-width: 835px;
   width: 100%;
-  border-top-left-radius: 12px;
   background-color: ${props => props.theme.colors.white.value};
+
+  ${props =>
+    props.hasOverlay &&
+    `
+  border-top-left-radius: 12px;
+  `}
 `;
 
 const ProjectImage = styled.img.attrs(({ src }) => ({

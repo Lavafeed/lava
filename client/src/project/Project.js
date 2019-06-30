@@ -1,20 +1,13 @@
 import styled from 'styled-components';
-import { connect } from 'react-redux';
 import Content from './Content';
 import Aside from './Aside';
 
-class Project extends React.Component {
-  render() {
-    return (
-      <Wrapper>
-        <Content />
-        <Aside />
-      </Wrapper>
-    );
-  }
-}
-
-export default connect(null)(Project);
+export default () => (
+  <Wrapper>
+    <Content />
+    <Aside />
+  </Wrapper>
+);
 
 const Wrapper = styled.div`
   display: flex;

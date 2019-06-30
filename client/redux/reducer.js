@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import { project } from './ducks';
+import { project, layout } from './ducks';
 
 const rootReducer = combineReducers({
-  project
+  project,
+  layout
 });
 
 export default rootReducer;

@@ -1,12 +1,14 @@
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import { button, container } from '../../shared/styles';
+import { toggleOverlay, selectOverlay } from '../../redux/ducks/layout';
 
 import Icon from '../common/Icon';
 import Heading from '../../src/common/Heading';
 import Card from './Card';
 import Follow from './Follow';
 
-export default () => {
+export default props => {
   const params = {
     slug: '1',
     avatar: '',
@@ -17,6 +19,7 @@ export default () => {
     coins: 987,
     likes: 286
   };
+
   return (
     <Wrapper>
       <Container>

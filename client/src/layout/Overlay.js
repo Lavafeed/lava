@@ -1,24 +1,18 @@
 import { connect } from 'react-redux';
+import { selectOverlay, toggleOverlay } from '../../redux/ducks/layout';
 import styled from 'styled-components';
 import Link from '../common/Link';
 
-class AppOverlay extends React.Component {
-  state = {
-    isClosed: false
-  };
-  handleOutsideClick = () =>
-    this.setState(({ isClosed }) => ({ isClosed: true }));
-
-  render() {
-    return (
-      !this.state.isClosed && <Overlay onClick={this.handleOutsideClick} />
-    );
-  }
-}
+const AppOverlay = ({ hasOverlay, toggleOverlay }) =>
+  hasOverlay && <Overlay onClick={toggleOverlay} />;
 
 export default connect(
-  state => ({}),
-  dispatch => ({})
+  state => ({
+    hasOverlay: selectOverlay(state)
+  }),
+  dispatch => ({
+    toggleOverlay: () => dispatch(toggleOverlay())
+  })
 )(AppOverlay);
 
 const Overlay = styled.div`
