@@ -5,7 +5,7 @@ import Icon from '../common/Icon';
 import Comment from './Comment';
 
 const Comments = () => {
-  const [currentTab, setCurrentTab] = useState('comments');
+  const [currentTab, setCurrentTab] = useState('information');
 
   const renderComments = ({ ...props }) => (
     <CommentsSection>
@@ -20,7 +20,25 @@ const Comments = () => {
     </CommentsSection>
   );
 
-  const renderInformation = ({ ...props }) => <div>hello</div>;
+  const renderInformation = ({ ...props }) => (
+    <InfoSection>
+      <Title>Description</Title>
+      <Description>
+        The website of the company, which provides uninterrupted power supply
+        throughout Europe. Particular attention in design is paid to the
+        technology and uniqueness inherent in the products presented.
+      </Description>
+      <PostDate>Published: 20 апреля 2017 г.</PostDate>
+      <Title>Tags</Title>
+      <Tags>
+        <Tag>ui design</Tag>
+        <Tag>ikea</Tag>
+        <Tag>Concept</Tag>
+        <Tag>redesign</Tag>
+        <Tag>Interaction</Tag>
+      </Tags>
+    </InfoSection>
+  );
 
   return (
     <Wrapper>
@@ -114,3 +132,51 @@ const Field = styled.input.attrs(({ placeholder }) => ({
 `;
 
 const SortBtn = styled.button``;
+
+const InfoSection = styled.div``;
+
+const Title = styled.h4`
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1.17;
+  color: ${props => props.theme.colors.black.value};
+  margin-bottom: 12px;
+`;
+
+const Description = styled.p`
+  font-size: 12px;
+  line-height: 1.5;
+  color: ${props => props.theme.colors.black.value};
+  margin-bottom: 16px;
+`;
+
+const PostDate = styled.h5`
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.5;
+  color: ${props => props.theme.colors.inactive.value};
+  margin-bottom: 48px;
+`;
+
+const Tags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const Tag = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  border-radius: 4px;
+  background-color: ${props => props.theme.colors.lightGrey.value};
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 1.17;
+  text-align: center;
+  color: ${props => props.theme.colors.inactive.value};
+  padding: 0 11px;
+  margin-right: 9px;
+  margin-bottom: 14px;
+`;
