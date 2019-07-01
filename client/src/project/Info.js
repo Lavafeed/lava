@@ -9,11 +9,6 @@ import Follow from '../home/Follow';
 const Info = ({ ...props }) => {
   const tags = ['User Experience', 'Interaction Design', 'Animation Design'];
 
-  const handleClose = () => {
-    props.toggleOverlay();
-    Router.back();
-  };
-
   return (
     <Wrapper>
       <Header>
@@ -22,7 +17,7 @@ const Info = ({ ...props }) => {
         <IconBtn>
           <Icon name="more" />
         </IconBtn>
-        <IconBtn onClick={handleClose}>
+        <IconBtn>
           <Icon name="cross" />
         </IconBtn>
       </Header>

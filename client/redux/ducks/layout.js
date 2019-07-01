@@ -7,13 +7,15 @@ const moduleName = 'LAYOUT';
  * */
 
 export const TOGGLE_OVERLAY = `${moduleName}//TOGGLE_OVERLAY`;
+export const CATCH_PREV_ROUTE = `${moduleName}//CATCH_PREV_ROUTE`;
 
 /**
  * Reducer
  * */
 
 const initialState = {
-  hasOverlay: false
+  hasOverlay: false,
+  prevRoute: '/'
 };
 
 export default function reducer(state = initialState, action) {
@@ -24,6 +26,11 @@ export default function reducer(state = initialState, action) {
       return {
         hasOverlay: !state.hasOverlay
       };
+    case CATCH_PREV_ROUTE:
+      return {
+        ...state,
+        prevRoute: payload
+      };
     default:
       return state;
   }
@@ -32,6 +39,11 @@ export default function reducer(state = initialState, action) {
 /**
  * Action Creators
  * */
+
+export const catchPrevRoute = payload => ({
+  type: TOGGLE_OVERLAY,
+  payload
+});
 
 export const toggleOverlay = () => ({
   type: TOGGLE_OVERLAY

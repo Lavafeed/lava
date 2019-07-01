@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { selectOverlay } from '../../redux/ducks/layout';
@@ -8,9 +9,7 @@ const Content = ({ hasOverlay, ...props }) => (
   </Wrapper>
 );
 
-export default connect(state => ({
-  hasOverlay: selectOverlay(state)
-}))(Content);
+export default Content;
 
 const Wrapper = styled.div`
   overflow-y: scroll;
